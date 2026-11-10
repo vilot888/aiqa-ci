@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 答疑助手 · aiqa</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f6bff'/%3E%3Cpath d='M9 21.5l2.2-7.3 7.3-2.2-2.2 7.3z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div class="brand">
+        <span class="dot"></span>
+        <h1>AI 答疑助手</h1>
+        <span class="tag">aiqa · 项目6 成果</span>
+      </div>
+      <p class="sub">输入你的问题，助手会检索知识库并给出回答；每条问答都会落盘存档。</p>
+    </header>
+
+    <main class="layout">
+      <section class="card ask-card">
+        <label class="label" for="question">你的问题</label>
+        <form id="askForm" autocomplete="off">
+          <div class="input-row">
+            <input
+              id="question"
+              data-testid="ask-input"
+              type="text"
+              placeholder="例如：什么是 Spec 驱动开发？"
+              maxlength="500"
+            />
+            <button id="askBtn" data-testid="ask-button" type="submit">提交提问</button>
+          </div>
+        </form>
+
+        <div id="result" data-testid="answer-panel" class="answer-panel hidden">
+          <div class="answer-head">
+            <span class="badge">回答</span>
+            <span id="answerMeta" data-testid="answer-meta" class="meta"></span>
+          </div>
+          <div id="answer" data-testid="answer-text" class="answer-text"></div>
+        </div>
+
+        <div id="errorBox" class="error hidden"></div>
+      </section>
+
+      <aside class="card history-card">
+        <div class="history-head">
+          <h2>历史提问</h2>
+          <span id="historyCount" class="count">0 条</span>
+        </div>
+        <ul id="history" data-testid="history-list" class="history"></ul>
+        <p id="historyEmpty" class="empty">还没有提问记录，先问一个试试。</p>
+      </aside>
+    </main>
+
+    <footer class="foot">
+      <span>接口：POST /api/ask · GET /api/history</span>
+      <span>存档：data/qa-records.json</span>
+    </footer>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
