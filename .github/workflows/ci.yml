@@ -105,7 +105,7 @@ jobs:
             -d '{"question":"CI 里容器能正常回答吗？"}' | tee ask.json
           echo ""
           echo "--- 校验回答非空 ---"
-          node -e "const d=require('./ask.json'); if(!d.answer){console.error('answer 为空');process.exit(1)} console.log('回答长度:', d.answer.length, '来源数:', (d.sources||[]).length)"
+          node -e "const r=require('./ask.json'); const d=r.data||r; if(!d.answer){console.error('answer 为空');process.exit(1)} console.log('ok:',r.ok,'| 回答长度:', d.answer.length, '| 来源数:', (d.sources||[]).length, '| 模式:', d.mode)"
 
       - name: 查看容器日志
         run: docker logs qa-helper
