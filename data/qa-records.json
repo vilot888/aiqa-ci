@@ -1,0 +1,12 @@
+[
+  {
+    "id": "3c18e953-9553-4b1a-a89a-a1c2cba2340f",
+    "question": "什么是 Spec 驱动开发？（E2E 1794308738483）",
+    "answer": "【Spec 驱动开发】Spec 驱动开发（Spec-Driven Development）指先把需求写成结构化、可验收的规格说明（Spec），再让 AI 依据 Spec 实现代码与测试。Spec 里通常包含验收标准（Acceptance Criteria），它既是实现的依据，也是测试断言的来源，从而避免 AI“自由发挥”。",
+    "sources": [
+      "演示知识库：Spec 驱动开发"
+    ],
+    "mode": "demo",
+    "createdAt": "2026-11-10T11:05:38.566Z"
+  }
+]
