@@ -1,0 +1,16 @@
+node_modules
+.git
+.gitignore
+tests
+test-results
+playwright-report
+.helpers
+.github
+*.log
+*.md
+.vscode
+.idea
+coverage
+docs
+logs
+shots
